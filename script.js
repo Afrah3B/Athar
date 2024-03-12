@@ -35,9 +35,13 @@ function submitAthar(e) {
     console.log(ayah, name, num, athar);
     saveAthar(ayah, name, num, athar);
 
-    msgsuccess.textContent = 'شكرا لمشاركتك';
+    msgsuccess.style.display='flex';
     setTimeout(() => {
-        msgsuccess.textContent = '';
+        document.forms['athar-form']['ayah-entered'].value='';
+        document.forms['athar-form']['athar-entered'].value='';
+        document.forms['athar-form']['num-entered'].value='';
+        document.forms['athar-form']['name-entered'].value='';
+        msgsuccess.style.display='none';
         show('read');
     }, 3000);
 
@@ -55,7 +59,11 @@ function saveAthar(ayah, name, num, athar) {
         console.log('error:', error);
     });
 }
-
+var windowList;
+window.onload=async ()=>{
+    windowList= await read();
+    console.log(windowList)
+}
 async function read() {
     var list = [];
     try {
@@ -80,20 +88,20 @@ async function display() {
     var num = document.getElementById("num-displayed");
     var atharText = document.getElementById("athar-text");
     var info = document.getElementById("info-displayed");
-    var list = await read();
-    var i = Math.floor(Math.random() * list.length);
-    console.log(list[i])
-    ayah.textContent = list[i]['ayah'];
-    if (list[i]['athar'] != '') {
-        athar.textContent = list[i]['athar'];
+
+    var i = Math.floor(Math.random() * windowList.length);
+    console.log(windowList[i])
+    ayah.textContent = windowList[i]['ayah'];
+    if (windowList[i]['athar'] != '') {
+        athar.textContent = windowList[i]['athar'];
         atharText.style.display = 'block';
     }
     else{
         atharText.style.display = 'none';
     }
-    if (list[i]['name'] != '' && list[i]['num'] != '') {
-        name.textContent = list[i]['name'];
-        num.textContent = list[i]['num'];
+    if (windowList[i]['name'] != '' && windowList[i]['num'] != '') {
+        name.textContent = windowList[i]['name'];
+        num.textContent = windowList[i]['num'];
         info.style.display = 'block';
     }
     else{

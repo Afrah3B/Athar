@@ -181,7 +181,7 @@ h5 {
     text-align: center;
     color: #474774;
     margin: 1%;
-    z-index: 101;
+    z-index: 5;
 }
 .text{
     text-align: right;
@@ -200,7 +200,7 @@ form{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 99;
+    z-index: 3;
 }
 .txtareaTitle {
     font-family: 'El Messiri', sans-serif;
@@ -212,7 +212,7 @@ form{
     width: 40px;
     text-align: center;
     background-color: #FCFDF4;
-    z-index: 100;
+    z-index: 4;
 }
 .inputTitle {
     font-family: 'El Messiri', sans-serif;
@@ -225,7 +225,7 @@ form{
     height: 20px;
     text-align: center;
     background-color: #FCFDF4;
-    z-index: 100;
+    z-index: 4;
 }
 
 textarea{
@@ -239,7 +239,7 @@ textarea{
     font-family: 'El Messiri', sans-serif;
     color: #474774;
     width: auto;
-    z-index: 99;
+    z-index: 3;
 }
 .input {
     background-color: #fcfdf4c0;
@@ -251,7 +251,7 @@ textarea{
     font-family: 'El Messiri', sans-serif;
     color: #474774;
     width: auto;
-    z-index: 99;
+    z-index: 3;
 }
 
 textarea:focus,
@@ -274,7 +274,7 @@ button {
     font-size: 15px;
     font-family: 'El Messiri', sans-serif;
     margin: 1%;
-    z-index: 101;
+    z-index: 4;
 }
 
 button:hover {
@@ -322,4 +322,20 @@ button:hover {
 }
 .msg-success{
     color: #b892dd;
+    background-color: none;
+}
+
+.msg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcfdf4c0;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
 }
