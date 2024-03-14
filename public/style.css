@@ -15,9 +15,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.size{
-    width: 380px;
-}
 
 .evenly {
     justify-content: space-evenly;
@@ -26,14 +23,14 @@ body {
 .rectangle {
     background-color: #C56F43;
     width: 10px;
-    height: 620px;
+    height: 100vh;
     margin-left: 30px;
 }
 
 .line {
     background-color: #3E3430;
     width: 3px;
-    height: 620px;
+    height: 100vh;
     margin-left: 10px;
 }
 
@@ -171,6 +168,7 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
+    width: clamp(10px, 50vw, 600px);
 }
 
 h1,
@@ -182,6 +180,15 @@ h5 {
     color: #474774;
     margin: 1%;
     z-index: 5;
+}
+h1{
+    font-size:  clamp(0.5rem, 5vw, 1rem);
+}
+h4{
+    font-size: clamp(0.7rem, 2vw, 1rem);
+}
+h5{
+    font-size: clamp(0.7rem, 1vw, 1rem);
 }
 .text{
     text-align: right;
@@ -205,10 +212,10 @@ form{
 .txtareaTitle {
     font-family: 'El Messiri', sans-serif;
     color: #474774;
-    font-size: 15px;
+    font-size: 13px;
     position: relative;
-    top: 25px;
-    left: 130px;
+    top: 14px;
+    left: 110px;
     width: 40px;
     text-align: center;
     background-color: #FCFDF4;
@@ -217,12 +224,12 @@ form{
 .inputTitle {
     font-family: 'El Messiri', sans-serif;
     color: #474774;
-    font-size: 15px;
+    font-size: 13px;
     position: relative;
-    top: 7px;
-    left: 89px;
-    width: 60px;
-    height: 20px;
+    top: 6px;
+    left: 70px;
+    width: 50px;
+    height: 15px;
     text-align: center;
     background-color: #FCFDF4;
     z-index: 4;
@@ -252,6 +259,7 @@ textarea{
     color: #474774;
     width: auto;
     z-index: 3;
+    width: 120px;
 }
 
 textarea:focus,
@@ -337,5 +345,5 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 4vw;
 }
