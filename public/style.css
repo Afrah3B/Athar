@@ -182,7 +182,7 @@ h5 {
     z-index: 5;
 }
 h1{
-    font-size:  clamp(0.5rem, 5vw, 1rem);
+    font-size:  clamp(0.5rem, 5vw, 1.5rem);
 }
 h4{
     font-size: clamp(0.7rem, 2vw, 1rem);
