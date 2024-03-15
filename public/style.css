@@ -25,6 +25,8 @@ body {
     width: 10px;
     height: 100vh;
     margin-left: 30px;
+    box-shadow: inset 20px 20px 60px #a75e39,
+        inset -20px -20px 60px #e3804d;
 }
 
 .line {
@@ -38,27 +40,32 @@ body {
     position: absolute;
     top: 50px;
     left: 50px;
+    height: 20px;
 }
 
 .shape2 {
     position: absolute;
-    top: 150px;
-    left: 10px;
+    top: 170px;
+    left: 40px;
     rotate: 40deg;
+    height: 20px;
 }
 
 .shape3 {
     position: absolute;
-    top: -10px;
-    left: 50px;
-    rotate: 90deg;
+    top: 120px;
+    left: 140px;
+    rotate: 70deg;
+    height: 20px;
 }
 
 .square {
-    background-color: #AC9558;
     width: 20px;
     height: 20px;
     border-radius: 5px;
+    background: linear-gradient(145deg, #9b864f, #b89f5e);
+    box-shadow: 20px 20px 60px #927f4b,
+        -20px -20px 60px #c6ab65;
 }
 
 .triangle {
@@ -181,34 +188,41 @@ h5 {
     margin: 1%;
     z-index: 5;
 }
-h1{
-    font-size:  clamp(0.5rem, 5vw, 1.5rem);
+
+h1 {
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
 }
-h4{
+
+h4 {
     font-size: clamp(0.7rem, 2vw, 1rem);
 }
-h5{
+
+h5 {
     font-size: clamp(0.7rem, 1vw, 1rem);
 }
-.text{
+
+.text {
     text-align: right;
-    color:#2E7D32;
+    color: #2E7D32;
 }
-.athar-text{
+
+.athar-text {
     text-align: right;
-    color:#3E3430;
+    color: #3E3430;
 }
 
 .user-choice {
     width: fit-content;
 }
-form{
+
+form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 3;
 }
+
 .txtareaTitle {
     font-family: 'El Messiri', sans-serif;
     color: #474774;
@@ -221,6 +235,7 @@ form{
     background-color: #FCFDF4;
     z-index: 4;
 }
+
 .inputTitle {
     font-family: 'El Messiri', sans-serif;
     color: #474774;
@@ -235,7 +250,7 @@ form{
     z-index: 4;
 }
 
-textarea{
+textarea {
     background-color: #fcfdf4c0;
     padding: 2%;
     margin: 2%;
@@ -248,6 +263,7 @@ textarea{
     width: auto;
     z-index: 3;
 }
+
 .input {
     background-color: #fcfdf4c0;
     padding: 2%;
@@ -269,7 +285,7 @@ textarea:focus,
 }
 
 button {
-    background-color: #F9C358;
+    background: linear-gradient(145deg, #e0b04f, #ffd15e);
     border-radius: 10px;
     outline: none;
     cursor: pointer;
@@ -281,56 +297,63 @@ button {
     font-weight: bold;
     font-size: 15px;
     font-family: 'El Messiri', sans-serif;
-    margin: 1%;
+    margin: 3%;
     z-index: 4;
 }
 
 button:hover {
     animation-name: blue-color;
     animation-duration: 2s;
-    animation-fill-mode:  forwards;
+    animation-fill-mode: forwards;
 }
 
 @keyframes blue-color {
-    0%{
-        background-color: #F9C358;
+    0% {
+        background: linear-gradient(145deg, #e0b04f, #ffd15e);
         box-shadow: none;
     }
+
     100% {
-        background-color: #9292dd;
-        box-shadow: 0 0 2px #9292dd, 0 0 5px #9292dd, 0 0 15px #B2BBC9, 0 0 25px #B2BBC9;
+        background: linear-gradient(145deg, #8383c7, #9c9cec);
+        box-shadow: 0 0 2px #9292dd, 0 0 5px #9292dd, 0 0 15px #9292dd, 0 0 25px #9292dd;
     }
 }
 
 .Athar-day:hover {
     animation-name: sky-color;
     animation-duration: 2s;
-    animation-fill-mode:  forwards;
+    animation-fill-mode: forwards;
 }
+
 @keyframes sky-color {
-    0%{
-        background-color: #F9C358;
+    0% {
+        background: linear-gradient(145deg, #e0b04f, #ffd15e);
         box-shadow: none;
     }
+
     100% {
-        background-color: #b892dd;
-        box-shadow: 0 0 2px #b892dd, 0 0 5px #b892dd, 0 0 15px #B2BBC9, 0 0 25px #B2BBC9;
+        background: linear-gradient(145deg, #a683c7, #c59cec);
+        box-shadow: 0 0 2px #b892dd, 0 0 5px #b892dd, 0 0 15px #b892dd, 0 0 25px #b892dd;
     }
 }
 
-.user-choice{
+.user-choice {
     display: block;
 }
+
 .user-writing,
-.user-reading{
+.user-reading {
     display: none;
 }
-.msg-error{
+
+.msg-error {
     color: #C56F43;
 }
-.msg-success{
-    color: #b892dd;
-    background-color: none;
+
+.msg-success {
+    color: #4c1273;
+    background-color: transparent;
+    font-size: 15px;
 }
 
 .msg-container {
@@ -346,4 +369,95 @@ button:hover {
     justify-content: center;
     align-items: center;
     font-size: 4vw;
+}
+
+.submit-btn {
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.submit-btn span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn svg,.span-btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.submit-btn:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.submit-btn:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.submit-btn:hover span {
+    transform: translateX(5em);
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+.span-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+    padding: 1% 2%;
+}
+
+
+.span-btn:hover {
+    width: 100px;
+    transition-duration: .3s;
+    align-items: center;
+}
+
+.span-btn::before {
+    position: absolute;
+    left: 50px;
+    color: #3E3430;
+    transition-duration: .3s;
+}
+.update-btn-content::before{
+    content: "تحديث";
+}
+.add-btn-content::before{
+    content: "اضافة";
+}
+
+.span-btn:hover::before {
+    opacity: 1;
+    transform: translateX(-15px);
+    transition-duration: .3s;
+}
+.span-btn:hover svg{
+    transform: translateX(-25px);
 }

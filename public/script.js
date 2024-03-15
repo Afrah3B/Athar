@@ -98,6 +98,7 @@ async function display() {
     }
     else{
         atharText.style.display = 'none';
+        athar.textContent = '';
     }
     if (windowList[i]['name'] != '' && windowList[i]['num'] != '') {
         name.textContent = windowList[i]['name'];
