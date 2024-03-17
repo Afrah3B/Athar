@@ -35,13 +35,13 @@ function submitAthar(e) {
     console.log(ayah, name, num, athar);
     saveAthar(ayah, name, num, athar);
 
-    msgsuccess.style.display='flex';
+    msgsuccess.style.display = 'flex';
     setTimeout(() => {
-        document.forms['athar-form']['ayah-entered'].value='';
-        document.forms['athar-form']['athar-entered'].value='';
-        document.forms['athar-form']['num-entered'].value='';
-        document.forms['athar-form']['name-entered'].value='';
-        msgsuccess.style.display='none';
+        document.forms['athar-form']['ayah-entered'].value = '';
+        document.forms['athar-form']['athar-entered'].value = '';
+        document.forms['athar-form']['num-entered'].value = '';
+        document.forms['athar-form']['name-entered'].value = '';
+        msgsuccess.style.display = 'none';
         show('read');
     }, 3000);
 
@@ -60,8 +60,8 @@ function saveAthar(ayah, name, num, athar) {
     });
 }
 var windowList;
-window.onload=async ()=>{
-    windowList= await read();
+window.onload = async () => {
+    windowList = await read();
     console.log(windowList)
 }
 async function read() {
@@ -96,7 +96,7 @@ async function display() {
         athar.textContent = windowList[i]['athar'];
         atharText.style.display = 'block';
     }
-    else{
+    else {
         atharText.style.display = 'none';
         athar.textContent = '';
     }
@@ -105,7 +105,7 @@ async function display() {
         num.textContent = windowList[i]['num'];
         info.style.display = 'block';
     }
-    else{
+    else {
         info.style.display = 'none';
     }
 }
@@ -114,10 +114,12 @@ async function show(type) {
     var userChoice = document.getElementById("user-choice");
     var userWriting = document.getElementById("user-writing");
     var userReading = document.getElementById("user-reading");
+    var readinglist = document.getElementById("reading-list");
     if (type == 'write') {
         userChoice.style.display = "none";
         userWriting.style.display = "flex";
         userReading.style.display = "none";
+        readinglist.style.display = "none";
         return;
     }
     else if (type == 'read') {
@@ -125,8 +127,110 @@ async function show(type) {
         userChoice.style.display = "none";
         userWriting.style.display = "none";
         userReading.style.display = "flex";
+        readinglist.style.display = "none";
+        return;
+    }
+    else if (type == 'list') {
+        entry=0;
+        createAtharcards(true);
+        userChoice.style.display = "none";
+        userWriting.style.display = "none";
+        userReading.style.display = "none";
+        readinglist.style.display = "flex";
         return;
     }
     return;
 }
+var entry = 0;//-----------------------
+function createAtharcards(isAdd) {
+    if (windowList != null) {
+        if (entry < windowList.length && isAdd) {
+            //cleaning list div to add the other
+            cleanList();
 
+            var x = windowList.length - entry;
+            var y = 5;
+            if (x < y) {
+                y = x;
+            }
+
+            for (var i = 0; i < y; i++) {
+                makeCard();
+                entry++;
+            }
+        }
+
+        else if(entry>5 && (!(isAdd))){
+            cleanList();
+            var x = entry%5;
+            var y = 10;
+            if (x != 0) {
+                y = 5+x;
+            }
+            entry-=y;
+
+            for (var i = 0; i < 5; i++) {
+                makeCard();
+                entry++;
+            }
+        }
+
+        document.getElementById("endnum").textContent = windowList.length;
+        document.getElementById("startnum").textContent = entry;
+    }
+}
+
+function makeCard() {
+    var a = document.createElement("h5");
+    a.setAttribute("class", "text");
+    a.textContent = ':قوله تعالى';
+
+    var b = document.createElement("div");
+    b.setAttribute("class", "textSize");
+    b.appendChild(a);
+
+    var c = document.createElement("h5");
+    c.setAttribute("class", "text");
+    c.textContent = windowList[entry]['ayah'];
+
+    var d = document.createElement("div");
+    d.setAttribute("class", "row justified");
+    d.appendChild(c);
+    d.appendChild(b);
+
+    var e = document.createElement("h5");
+    e.setAttribute("class", "text");
+    e.textContent = 'سورة: ' + windowList[entry]['name'] + " ,رقم الايه: " + windowList[entry]['num'];
+
+    var h = document.createElement("div");
+    h.setAttribute("class", "row justified");
+    if (windowList[entry]['athar'] != '') {
+        var f = document.createElement("h5");
+        f.setAttribute("class", "athar-text");
+        f.textContent = ':الأثر';
+
+        var g = document.createElement("h5");
+        g.setAttribute("class", "athar-text");
+        g.textContent = windowList[entry]['athar'];
+
+        h.appendChild(g);
+        h.appendChild(f);
+    }
+
+    var card = document.createElement("div");
+    card.setAttribute("class", "card");
+    card.appendChild(d);
+    card.appendChild(e);
+    card.appendChild(h);
+    document.getElementById("list").appendChild(card);
+}
+
+function cleanList() {
+    const list = document.getElementById("list");
+    if (list.hasChildNodes()) {
+        for (var i = list.children.length-1; i > -1; i--) {
+            console.log(list.children.length)
+            list.removeChild(list.children[i]);
+        }
+    }
+}

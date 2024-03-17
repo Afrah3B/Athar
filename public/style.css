@@ -429,13 +429,13 @@ button:hover {
     transition-duration: .3s;
     overflow: hidden;
     position: relative;
-    width: 30px;
+    width: clamp(35px, 7vw, 50px);
     padding: 1% 2%;
 }
 
 
 .span-btn:hover {
-    width: 100px;
+    width: clamp(90px, 17vw, 100px);
     transition-duration: .3s;
     align-items: center;
 }
@@ -453,11 +453,76 @@ button:hover {
     content: "اضافة";
 }
 
+.list-btn-content::before{
+    content: "الكل";
+}
+
 .span-btn:hover::before {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-20px);
     transition-duration: .3s;
 }
 .span-btn:hover svg{
     transform: translateX(-25px);
+}
+
+/* all athar */
+.reading-list{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    margin: 1% 2%;
+    align-items: center;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 1% 2%;
+}
+.card{
+    height: auto;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2%;
+    margin: 1%;
+    z-index: 10;
+}
+.card h5{
+    background-color: transparent;
+}
+
+.textSize{
+    width: 58px;
+}
+
+.backbtn{
+    width: 35px;
+    height: 25px;
+}
+.justified{
+    justify-content: flex-end;
+}
+.outOf{
+    z-index: 10;
+    width: clamp(200px, 50vw, 600px);
+    direction: rtl;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    border-radius: 8px;
+    align-items: center;
+}
+
+.outOf h5{
+    text-align: right;
+    color: #4c1273;
+}
+.next-symbols2{
+    rotate: 180deg;
+}
+.next-symbols1,.next-symbols2{
+    color: #4c1273;
+    cursor: pointer;
 }

@@ -8,6 +8,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Pacifico&family=Salsa&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -316,7 +319,7 @@
 
                     <br>
                     <div class="row evenly">
-                        <button onclick="display()" class="span-btn update-btn-content">
+                        <button type="button" onclick="display()" class="span-btn update-btn-content">
                             <svg fill="#000000" width="20px" height="20px" viewBox="0 0 24 24" id="update-alt"
                                 data-name="Flat Color" xmlns="http://www.w3.org/2000/svg"
                                 class="icon flat-color span-btn-icon">
@@ -332,10 +335,11 @@
                                 </g>
                             </svg>
                         </button>
-                        <button onclick="show('write')" class="span-btn add-btn-content">
+                        <button type="button" onclick="show('write')" class="span-btn add-btn-content">
                             <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px"
-                                viewBox="0 0 32 32" xml:space="preserve" fill="#3E3430" transform="rotate(45)" class="span-btn-icon">
+                                viewBox="0 0 32 32" xml:space="preserve" fill="#3E3430" transform="rotate(45)"
+                                class="span-btn-icon">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -359,8 +363,38 @@
                                 </g>
                             </svg>
                         </button>
+                        <button type="button" onclick="show('list')" class="span-btn list-btn-content">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" class="span-btn-icon">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path fill="#3E3430" fill-rule="evenodd"
+                                        d="M19 4a1 1 0 01-1 1H7a1 1 0 010-2h11a1 1 0 011 1zM4 4a1 1 0 01-1 1H2a1 1 0 010-2h1a1 1 0 011 1zm15 6a1 1 0 01-1 1H7a1 1 0 110-2h11a1 1 0 011 1zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm14 7a1 1 0 100-2H7a1 1 0 100 2h11zM3 17a1 1 0 100-2H2a1 1 0 100 2h1z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </button>
                     </div>
 
+                </div>
+                <div class="reading-list" id="reading-list">
+                    <div id="list" class="list"></div>
+                    <div class="row outOf">
+                        <span class="material-symbols-outlined next-symbols1" onclick="createAtharcards(true)">
+                            navigate_next
+                        </span>
+                        <h5 id="outOf"><span id="startnum"></span> من <span id="endnum"></span></h5>
+                        <span class="material-symbols-outlined next-symbols2" onclick="createAtharcards(false)">
+                            navigate_next
+                        </span>
+
+                        <button onclick="show('read')" class="Athar-day backbtn">
+                            <span class="material-symbols-outlined">
+                                arrow_back
+                                </span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
